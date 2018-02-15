@@ -1,4 +1,3 @@
-// include the library code:
 #include <LiquidCrystal.h>
 #include <Seeed_BME280.h>
 #include <Wire.h>
@@ -23,29 +22,29 @@ void loop() {
   
   lcd.setCursor(0, 0);
  lcd.print("Temperatur");
-  lcd.setCursor(3, 1);
+  lcd.setCursor(0, 1);
  lcd.print(bme280.getTemperature(),1);
  lcd.print(" C");
 
- delay(2000);
+ delay(interval);
  lcd.clear();
 
 lcd.setCursor(0, 0);
  lcd.print("Luftdruck");
- lcd.setCursor(3, 1);
+ lcd.setCursor(0, 1);
  lcd.print(bme280.getPressure());
  lcd.print(" Pa");
 
- delay(2000);
+ delay(interval);
  lcd.clear();
 
  lcd.setCursor(0, 0);
  lcd.print("Luftfeuchtigkeit");
- lcd.setCursor(3, 1);
+ lcd.setCursor(0, 1);
  lcd.print(bme280.getHumidity());
  lcd.print("%");
 
- delay(2000);
+ delay(interval);
  lcd.clear();
   }
 

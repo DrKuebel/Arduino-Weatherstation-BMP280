@@ -16,8 +16,8 @@ void setup() {
   }
   
   lcd.setCursor(0, 0);
-  lcd.print("BMP 280 & LCD 1602");
-  lcd.setCursor(0, 1);
+  lcd.print("BMP280 & LCD1602");
+  lcd.setCursor(1, 1);
   lcd.print("Weatherstation");
 
   delay(interval*3);

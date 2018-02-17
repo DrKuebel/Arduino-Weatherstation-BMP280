@@ -14,10 +14,19 @@ void setup() {
   if(!bme280.init()){
   lcd.print("Device error!");
   }
+  
+  lcd.setCursor(0, 0);
+  lcd.print("BMP 280 & LCD 1602");
+  lcd.setCursor(0, 1);
+  lcd.print("Weatherstation");
+
+  delay(interval*3);
+  lcd.clear();
+  
 }
 
 void loop() {
-  lcd.setCursor(3, 0);
+  lcd.setCursor(2, 0);
   lcd.print("Temperature");
   lcd.setCursor(5, 1);
   lcd.print(bme280.getTemperature(),1);
@@ -26,7 +35,7 @@ void loop() {
  delay(interval);
  lcd.clear();
 
-  lcd.setCursor(1, 0);
+  lcd.setCursor(3, 0);
   lcd.print("Airpressure");
   lcd.setCursor(4, 1);
   lcd.print((bme280.getPressure())/100);
@@ -35,7 +44,7 @@ void loop() {
  delay(interval);
  lcd.clear();
 
-  lcd.setCursor(3, 0);
+  lcd.setCursor(4, 0);
   lcd.print("Humidity");
   lcd.setCursor(6, 1);
   lcd.print(bme280.getHumidity());

@@ -12,7 +12,9 @@ void setup() {
   lcd.begin(16, 2);
 
   if(!bme280.init()){
-  lcd.print("Device error!");
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Missing Sensor!");
   }
   
   lcd.setCursor(0, 0);
